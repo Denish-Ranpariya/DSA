@@ -1,3 +1,5 @@
+//this code contains multiple functions check them all in detail
+
 import java.util.*;
 
 class Node{
@@ -102,6 +104,8 @@ class CreateBinaryTree{
         System.out.println("Sum: "+ sum(rootNode));
         System.out.println("Max Node: " + max(rootNode));
         System.out.println("Height: " + height(rootNode));
+        pathToRoot(rootNode, 37);
+        System.out.println("Path from 37 to root: " + result);
     }
 
     public static void display(Node node){
@@ -163,5 +167,44 @@ class CreateBinaryTree{
         int rightHeight = height(node.right);
 
         return 1 + Math.max(leftHeight, rightHeight);
+    }
+
+    //we want to find the path from node with given key to root node
+    //for this function see the video of pepcoding on youtube
+    //when node is found for the first time then all the way to the root it will return true so when true is returned then print it
+    static ArrayList<Integer> result = new ArrayList<Integer>();
+    public static boolean pathToRoot(Node root,int key){
+
+        //if tree doesn't exist then return false
+        if(root == null){
+            return false;
+        }
+
+        //if root itsefl is the node with given key then return true
+        if(root.data == key){
+            result.add(root.data);
+            return true;
+        }
+
+        //find in left subtree 
+        //if found then return true
+        boolean left = pathToRoot(root.left, key);
+        if(left){
+            result.add(root.data);
+            return true;
+        }
+
+        //find in right subtree
+        //if found then return true
+        boolean right = pathToRoot(root.right, key);
+        if(right){
+            result.add(root.data);
+            return true;
+        }
+
+        //if in all the above cases node is not found then node doesn't exists in the tree
+        //so return false
+        return false;
+
     }
 }
