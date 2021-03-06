@@ -1,43 +1,43 @@
 class Tree
-{   
+{
+	//flag for tree if it is balanced or not
+    static boolean flag = true;
+    
 	boolean isSumTree(Node root)
 	{
-        //if root is null then it is not balanced
-        //base case
-	    if(root == null){
-	        return false;
-	    }
-	    
-        //get sum of left sub tree
-	    int left = getSum(root.left);
-
-        //get sum of right sub tree
-	    int right = getSum(root.right);
-	    
-        //if sum of left subtree and right sub tree are equal then return true otherwise false
-	    if(left + right == root.data){
-	        return true;
-	    }else{
-	        return false;
-	    }
+        
+        getSum(root);
+        
+        return flag;
 	}
 	
-    //recursive function to get sum 
+
+	//to make binary tree unbalanced only one node is required
+	//if we found one node with is unbalanced then whole tree is unbalanced
+	//leaf node is already balanced so we have to check for only non-leaf nodes
 	public static int getSum(Node node){
-        
-        //if root is null then return sum as zero
-        //base case
+
+		//base case
 	    if(node == null){
 	        return 0;
 	    }
 	    
-        //getsum of left sub tree
+		//sum of left sub tree
 	    int left = getSum(node.left);
 
-        //get sum of right sub tree
+		//sum of right sub tree
 	    int right = getSum(node.right);
 	    
-        //return sum of leftsubtree + rightsubtree + node's data
+
+		//for non-leaf nodes
+		//if root's data is not equal to sum of left sun tree and right sub tree then tree will be unbalanced
+	    if(node.left != null && node.right != null){
+	        if(node.data != left + right){
+	            flag = false;
+	        }
+	    }
+	    
+		//return sum
 	    return node.data + left + right;
 	}
- }
+}
