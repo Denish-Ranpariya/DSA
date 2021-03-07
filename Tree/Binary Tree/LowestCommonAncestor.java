@@ -12,16 +12,7 @@ class Tree
 	    nodeToRoot1 = new ArrayList<Node>();
 	    nodeToRoot2 = new ArrayList<Node>();
 	    
-        //find node to root path for node 1
-	    boolean b1 = pathToRoot(root, n1, nodeToRoot1);
-
-        //find node to root path for node 2
-	    boolean b2 = pathToRoot(root, n2, nodeToRoot2);
-	    
-        //if one of node doesn't exists then return null
-	    if(b1 == false || b2 == false){
-	        return null;
-	    }
+        
 	    
         //set both pointers at last in both lists because we are checking from root
 	    int i = nodeToRoot1.size() - 1;
