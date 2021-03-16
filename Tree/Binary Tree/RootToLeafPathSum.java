@@ -39,7 +39,7 @@ class Tree {
         int sum2 = sum;
         
         //add current node's data in both sums
-        sum1 += node.data;
+        sum1 += node.data;      
         sum2 += node.data;
         
         //call recursive functions for left and right with sum1 and sum2
