@@ -9,7 +9,7 @@ class GfG
         //reset global statics
         maxSum = 0;
         maxNumberOfNodes = 0;
-        
+         
         //call recursive function
         solve(root, 0, 0);
         

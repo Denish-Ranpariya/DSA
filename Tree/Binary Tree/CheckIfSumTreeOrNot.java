@@ -30,7 +30,7 @@ class Tree
 	    
 
 		//for non-leaf nodes
-		//if root's data is not equal to sum of left sun tree and right sub tree then tree will be unbalanced
+		//if root's data is not equal to sum of left sub tree and right sub tree then tree will be unbalanced
 	    if(node.left != null && node.right != null){
 	        if(node.data != left + right){
 	            flag = false;
