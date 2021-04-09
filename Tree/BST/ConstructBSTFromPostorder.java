@@ -43,7 +43,7 @@ class GFG
         return root;
     }
     
-    //fuction to find jusst smaller element index
+    //fuction to find just smaller element index
     public static int findJustSmalllerElementIndex(int[] arr, int low, int high){
         int i = high;
         for(i = high; i >= low; i--){

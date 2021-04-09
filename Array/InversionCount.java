@@ -15,7 +15,7 @@
 
 class InversionCount{ 
 	
-	public static void main(String args[]) 
+	public static void main(String args[]) 	
 	{ 
 		int a[]= {1, 20, 6, 7, 5, 8, 11, 3};
 
