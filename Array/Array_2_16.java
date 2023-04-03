@@ -1,6 +1,5 @@
 // program to find the length of longest sub sequence
 
-
 // there are to methods possible
 
 // method-1
@@ -18,7 +17,7 @@
 // we will keep track of max length during this process
 import java.util.*;
 
-class Array_2_16{
+class Array_2_16 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the length of array:");
@@ -30,20 +29,20 @@ class Array_2_16{
 
 		HashSet<Integer> hs = new HashSet<Integer>();
 
-		for(int i = 0; i < n; i++){
-			System.out.println("Enter the number at " + (i+1) + ":");
+		for (int i = 0; i < n; i++) {
+			System.out.println("Enter the number at " + (i + 1) + ":");
 			arr[i] = sc.nextInt();
 			hs.add(arr[i]); // add all the elements to hashset
 		}
 
-		for(int i = 0; i < n; i++){
-			if(!hs.contains(arr[i] - 1)){ // check if the element is starting of sub sequence or not
+		for (int i = 0; i < n; i++) {
+			if (!hs.contains(arr[i] - 1)) { // check if the element is starting of sub sequence or not
 				int temp = arr[i];
-				while(hs.contains(temp)){
+				while (hs.contains(temp)) {
 					temp++;
 					localCount++;
 				}
 			}
-		}	
+		}
 	}
 }
